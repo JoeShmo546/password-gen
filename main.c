@@ -8,17 +8,17 @@ int main() {
 	char password[20];
 
 	char passarray[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*?";
-
-	srand(time(0));
-	int passindex;	
+	
+    srand(time(0));
+    int passindex;	
 	
 	for (int i = 0; i < strlen(password); i++){
-  		passindex = rand() % (38 + 1 - 0) + 1;
+		passindex = rand() % (38 + 1 - 0) + 1;
 		char passchar = passarray[passindex];
-  		strncat(password, &passchar, 1);
-  	}
+		strncat(password, &passchar, 1);
+	}
 	
-  	while(strlen(password) > 20){
+	while(strlen(password) > 20){
 		password[strlen(password)-1] = '\0';
 	}
 	
